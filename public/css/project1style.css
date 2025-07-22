@@ -1,0 +1,362 @@
+/* Global Reset for Horizontal Overflow */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure body takes full width */
+}
+
+/* Pastel Blue Theme */
+body {
+    background-color: #E0F2F7; /* Light Pastel Blue */
+}
+
+.navbar {
+    background-color: #1E1E1E;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #00BCD4; /* A more vibrant blue for buttons */
+    border-color: #00BCD4;
+}
+
+.btn-primary:hover {
+    background-color: #00ACC1;
+    border-color: #00ACC1;
+}
+
+.btn0, .btn2 {
+    background-color: #00BCD4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.btn0:hover, .btn2:hover {
+    background-color: #00ACC1;
+}
+
+.search {
+    border-radius: 5px;
+    border: 1px solid #00BCD4;
+}
+
+.card {
+    background-color: #F0F8FA !important; /* Lighter pastel for cards */
+}
+
+.main {
+    background-color: #E0F2F7
+}
+
+.pic {
+    height: 100vh;
+    width: 100vw;
+}
+
+.carousel {
+    margin-top: 85px;
+}
+
+.carousel-caption {
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.brand {
+    right: 0;
+    left: 0;
+    top: 0;
+
+    padding-top: 4rem;
+    padding-top: 2rem;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0.5;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0.5;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Kelas yang akan kita terapkan dengan JavaScript */
+.fade-in-from-left {
+    animation: fadeInFromLeft 0.8s ease-in-out;
+}
+
+.fade-in-from-right {
+    animation: fadeInFromRight 0.8s ease-in-out;
+}
+
+.trending {
+    background-color: #E0F2F7; /* Consistent with body background */
+}
+
+.mitra {
+    background-color: #E0F2F7; /* Pastel blue for the Mitra section */
+}
+
+.mitra h5, .mitra p {
+    color: #263238;
+}
+
+#gambar-mitra {
+    width:
+}
+
+.contact {
+    background-color: #E0F2F7; /* Consistent with body background */
+}
+
+.news {
+    background-color: #1E1E1E;
+}
+.news h1, .news h5, .news p {
+    color: #fff;
+}
+.news hr {
+    border-top: 1px solid #fff;
+}
+
+/* Responsive Adjustments */
+/* Ensure no horizontal padding/margins push content out */
+.container, .container-fluid {
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    padding-right: var(--bs-gutter-x, 0.75rem);
+}
+
+.row {
+    margin-left: calc(var(--bs-gutter-x, 0.75rem) * -1);
+    margin-right: calc(var(--bs-gutter-x, 0.75rem) * -1);
+}
+
+/* Adjustments for specific elements that might cause overflow */
+.main .container {
+    padding-bottom: 50px !important; /* Reduce large padding to avoid unnecessary scroll */
+}
+
+.col-md, .col-lg-3, .col-lg-4, .col-lg-7, .col-lg-5, .col-lg-6, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    padding-right: var(--bs-gutter-x, 0.75rem);
+}
+
+/* Social media icons alignment for smaller screens */
+.news .row.center {
+    text-align: center;
+}
+.news .row.center span {
+    display: inline-block;
+    margin: 0 5px; /* Add some spacing between icons */
+}
+
+/* Specific fix for contact section */
+.contact .container.card {
+    padding: 0; /* Remove internal padding on this specific card */
+}
+.contact .col-lg-9.m-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Adjustments for the image columns in trending section */
+.trending .column {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+#brands-section .owl-carousel .owl-stage {
+    display: flex;
+    align-items: stretch;
+}
+
+#brands-section .owl-carousel .owl-item,
+#brands-section .owl-carousel .item,
+#brands-section .owl-carousel .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#brands-section .owl-carousel .card-body {
+    flex-grow: 1;
+}
+
+#brands-section .brand-logo-container {
+    aspect-ratio: 1 / 1;      /* Paksa wadah jadi kotak */
+    width: 80px !important;   /* Paksa lebar menjadi 80px */
+    max-width: 80px !important; /* Batasi juga lebar maksimalnya */
+    margin: 0 auto 1rem;      /* Atur posisi & jarak bawah */
+}
+
+#brands-section .brand-logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;      /* Pastikan logo muat sempurna */
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        text-align: center; /* Center align navbar items on small screens */
+    }
+    .navbar-nav.me-auto {
+        margin-bottom: 1rem !important; /* Add space below main nav links */
+    }
+    .d-flex.align-items-center {
+        flex-direction: column; /* Stack search and login/signup vertically */
+    }
+    .d-flex.me-2 {
+        margin-right: 0 !important;
+        margin-bottom: 10px;
+    }
+    .search, .btn0 {
+        width: 100%; /* Make search bar and button full width */
+        margin-bottom: 5px;
+    }
+    .navbar-nav:last-child {
+        flex-direction: row; /* Keep Login/Signup side by side */
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar-nav:last-child .nav-item {
+        margin: 0 10px; /* Space out Login/Signup */
+    }
+    .col-lg-7.pt-5.text-center {
+        text-align: center !important;
+        width: 100% !important;
+        padding-top: 2rem !important;
+    }
+    .main .container {
+        padding-bottom: 50px !important;
+        padding-top: 50px !important;
+    }
+    .mitra .col-lg-4, .trending .col-lg-3 {
+        margin-bottom: 20px; /* Add spacing between cards/sections */
+    }
+    .contact .col-lg-9.m-auto .row.py-5 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .contact .col-lg-6.m-auto.text-center {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .contact .col-lg-10.py-3.m-auto.text-center {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .news .col-lg-9.m-auto.text-center {
+        padding: 0 15px;
+    }
+    .news input.px-3 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .news .btn2 {
+        width: 100%;
+    }
+    .news .col-lg-11 .row > div {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+     /* Pastikan gambar mengisi lebar penuh containernya */
+    #carousel .carousel-item img {
+        width: 100%;
+        height: 420px; /* KUNCI UTAMA: Tinggi diatur otomatis sesuai rasio asli gambar */
+    }
+
+    /* Opsional: Pastikan container item tidak memiliki tinggi yang dipaksakan */
+    #carousel .carousel-item {
+        height: 420px;
+    }
+
+    /* Mengatur ukuran gambar logo brand */
+    #brands-section .card img {
+        width: 80px; /* Ukuran gambar dikecilkan */
+    }
+
+    /* Mengecilkan judul brand */
+    #brands-section .card h6 {
+        font-size: 0.8rem;
+        margin-top: 0.5rem; /* Menambah sedikit jarak dari gambar */
+    }
+
+    /* Mengecilkan tombol dan tulisannya */
+    #brands-section .card .btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem; /* Membuat tombol lebih kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    #car-collection .card h6 {
+        font-size: 0.85rem; /* Mengecilkan judul mobil dan detail ikon */
+    }
+
+    #car-collection .card p {
+        font-size: 0.8rem; /* Mengecilkan teks harga */
+        margin-bottom: 0.5rem; /* Mengurangi jarak bawah agar lebih rapat */
+    }
+
+    #car-collection .card .btn {
+        font-size: 0.75rem; /* Mengecilkan tulisan pada tombol */
+        padding: 0.25rem 0.5rem; /* Menyesuaikan padding tombol agar tidak terlalu besar */
+    }
+
+    #mitra-borrowers-section h1 {
+        font-size: 2rem; /* Mengecilkan judul utama */
+    }
+
+    #mitra-borrowers-section h5 {
+        font-size: 1rem; /* Mengecilkan nama & jabatan */
+        margin-top: 1rem !important; /* Memberi sedikit jarak dari gambar */
+    }
+
+    #mitra-borrowers-section p {
+        font-size: 0.9rem; /* Mengecilkan teks paragraf testimoni */
+    }
+
+    #carousel .carousel-item img {
+        width: 100%;
+        height: 200px; /* KUNCI UTAMA: Tinggi diatur otomatis sesuai rasio asli gambar */
+    }
+
+    #carousel .carousel-item {
+        height: 200px;
+    }
+}

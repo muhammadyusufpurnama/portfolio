@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* Ini adalah font Poppins yang disebut di body, pastikan juga ada import untuk Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); /* Tambahkan ini jika belum ada */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 13px;
+    --color: #eee;
+    color: var(--color);
+    background-color: #23282E;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    padding-top: 10px;
+    /* --- MODIFIKASI DIMULAI DI SINI --- */
+    background-color: rgba(30, 30, 30, 0.8); /* Background gelap transparan */
+    padding-bottom: 10px; /* Tambahkan padding-bottom agar ada ruang di bawah link */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Tambahkan bayangan agar sedikit terangkat */
+    /* --- MODIFIKASI BERAKHIR DI SINI --- */
+}
+header nav a{
+    margin: 0 30px;
+    color: var(--color);
+    font-size: small;
+    /* Tambahkan efek hover agar lebih interaktif */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px; /* Sedikit padding agar hover area lebih besar */
+    border-radius: 5px; /* Sedikit sudut membulat */
+}
+header nav a:hover {
+    color: #fff; /* Warna teks lebih putih saat hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Background transparan saat hover */
+}
+
+
+.tab{
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    background-image: url(images/bg.png); /* Pastikan file bg.png ada di public/images */
+    background-size: 50%;
+    /* --- PENTING: Tambahkan padding-top ke tab pertama agar tidak tertutup navbar fixed --- */
+    /* Ini akan memastikan konten tab tidak tersembunyi di bawah navbar */
+    padding-top: 60px; /* Sesuaikan ini jika tinggi header berubah */
+    box-sizing: border-box; /* Pastikan padding tidak menambah total tinggi */
+}
+.tab .container{
+    width: 1140px;
+    max-width: 100%;
+    height: 100%;
+    /* padding-top: 50px; <-- Hapus atau nolkan ini jika padding-top di .tab sudah cukup */
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+}
+#intro{
+    background-color: #16222D;
+    /* --- PENTING: Pastikan ini berada di atas z-index global .tab jika diperlukan --- */
+    /* Tapi dengan z-index di .tab dan .tab.active, ini mungkin tidak perlu */
+}
+#intro .avatar{
+    text-align: right;
+    height: 100%;
+}
+#intro .avatar img{
+    height: 100%;
+    filter: saturate(1.5);
+}
+#intro .content{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    width: 500px;
+    max-width: 80%;
+}
+#intro .content .name,
+#intro .content .job{
+    font-size: 6em;
+    font-weight: bold;
+    font-family: 'Righteous', sans-serif;
+    line-height: 1em;
+}
+.text-gradient{
+    background-image: linear-gradient(
+        to right, #E4454A, #CA3EA7
+    );
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+#intro .content .des{
+    margin-top: 1.2em;
+    width: 70%;
+}
+#intro .content .des a{
+    margin-top: 1.2em;
+}
+#intro .content i{
+    font-size: 10em;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    color: #293b4c;
+}
+
+/* skills */
+#skill{
+    background-color: #F2F0EB; /* Ini akan di-override oleh background-image linear-gradient di bawahnya */
+    color: #eee;
+    background-image: linear-gradient(
+        45deg, #3A2530, #171514, #412726
+    );
+    background-size: cover;
+}
+
+/* Modifikasi pada #skill .list */
+#skill .list{
+    /* HAPUS ATAU KOMENTARI BARIS INI: */
+    /* height: 100%; */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0px;
+    box-sizing: border-box;
+    gap: 0px;
+}
+
+#skill .list .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+#skill .list .item:nth-child(odd){
+    background-color: #3F2525;
+}
+#skill .list .item i{
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    color: #CA3EA7;
+    font-size: 2em;
+    display: flex;
+    justify-content : center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px #0005;
+}
+#skill .list .item .name{
+    font-size: 1.5em;
+    margin-top: 0.7em;
+}
+#skill .list .item .des{
+    font-size: small;
+    opacity: 0.8;
+}
+
+/* Tambahkan modifikasi ini untuk .container di dalam #skill */
+#skill .container {
+    height: 100%; /* Pastikan container mengambil tinggi penuh dari #skill (yang 100vh - padding header) */
+    overflow-y: auto; /* Ini yang akan membuat konten di dalamnya bisa digulir */
+    box-sizing: border-box; /* Penting untuk padding */
+    padding-top: 50px; /* Pertahankan padding asli jika diperlukan untuk konten */
+    padding-bottom: 50px; /* Tambahkan padding bawah agar scroll lebih nyaman */
+}
+
+/* project */
+#project{
+    background-color: #cfbaba; /* Ini adalah background default jika tidak ada gambar latar */
+    color: #444B57; /* Warna teks untuk bagian project */
+}
+#project .list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px;
+}
+#project .list .item img{
+    width: 100%;
+    height: 150px;
+    object-fit: contain; /* Menggunakan 'contain' agar gambar tidak terpotong */
+    /* Anda mungkin juga perlu menambahkan background ke img jika ada ruang kosong */
+    background-color: #f0f0f0; /* Contoh: background putih di area yang kosong */
+}
+#project .list .item{
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+}
+#project .list .item .index{
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    transform: translateY(-100%);
+    padding: 10px;
+    font-style: italic;
+    border-top-right-radius: 20px;
+}
+#project .list .item .name{
+    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+}
+#project .list .item .des{
+    padding: 0 10px 10px 10px;
+}
+#project .list .item .author{
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+#project .list .item .job{
+    font-weight: bold;
+}
+#project .container{
+    overflow: auto;
+}
+/* --- Tambahkan di bagian akhir file, atau di bagian #project --- */
+
+#project .list .item .project-detail-btn {
+    display: block; /* Membuat link menjadi blok agar bisa diatur lebar dan padding */
+    text-align: center;
+    background-color: #E4454A; /* Warna background tombol (sesuai text-gradient Anda) */
+    color: #fff; /* Warna teks tombol */
+    padding: 10px;
+    margin: 10px 10px 15px 10px; /* Atur margin agar ada jarak dari konten lain dan bawah */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+#project .list .item .project-detail-btn:hover {
+    background-color: #CA3EA7; /* Warna background saat di-hover (sesuai text-gradient Anda) */
+}
+
+/* Jika Anda ingin tombol berada di posisi tertentu dalam item */
+/* Anda mungkin perlu menyesuaikan tata letak grid atau flexbox dari .item */
+/* atau mengatur posisi absolut jika desain Anda memungkinkan. */
+/* Contoh sederhana, jika ingin di bawah author: */
+#project .list .item {
+    display: flex; /* Ubah .item menjadi flex container */
+    flex-direction: column; /* Susun item secara vertikal */
+    justify-content: space-between; /* Untuk mendorong tombol ke bawah */
+    height: auto; /* Pastikan tinggi item tidak fixed terlalu kecil */
+}
+
+#project .list .item .author {
+    margin-top: auto; /* Ini akan mendorong author dan tombol ke bawah */
+}
+
+/* Fade Out dan Fade In ke Atas dan Bawah */
+@keyframes fadeUpDownOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+@keyframes fadeUpDownIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-image.fade-out {
+    animation: fadeUpDownOut 0.5s forwards;
+}
+
+.project-image.fade-in {
+    animation: fadeUpDownIn 0.5s forwards;
+}
+
+/* experience */
+#experience{
+    background-image: linear-gradient(
+        45deg, #212632, #242A34, #3C4C5A
+    );
+    background-size: cover;
+}
+#experience .list{
+    height: 100%;
+    width: max-content;
+    display: flex;
+    justify-content: left;
+    box-sizing: border-box;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+#experience .list .item{
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    gap: 20px;
+    width: 200px;
+    flex-shrink: 0;
+}
+#experience .list .item i{
+    background-color: #444B57;
+    width: 50px;
+    color: #16222D;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#experience .list .item .time{
+    display: flex;
+    align-items: end;
+    font-size: large;
+}
+#experience .list .item .content .job{
+    font-size: large;
+}
+#experience .list .item .content .company{
+    color: #E4454A;
+}
+#experience .list .item .content .des{
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+#experience .list .item:nth-child(odd) .content{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#experience .list .item:nth-child(odd) .time{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-items: start;
+}
+#experience .list::before{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #444B57;
+    content: '';
+    z-index: -1;
+}
+#experience .container{
+    overflow: auto;
+    padding: 50px;
+}
+
+#contact{
+    background: #242330;
+}
+#contact .content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#contact .thank{
+    font-size: 5em;
+    font-weight: bold;
+    display: block;
+}
+#contact .des{
+    width: 500px;
+    max-width: 80%;
+    text-align: center;
+}
+#contact .list{
+    text-align: center;
+}
+#contact .list .item{
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+
+@media screen and (max-width: 991px){
+    /* ipad, tablets */
+    #intro .avatar img{
+        transform: translateX(200px);
+    }
+
+}
+@media screen and (max-width: 767px){
+    body{
+        font-size: 10px;
+    }
+    header nav a{
+        margin: 10px;
+    }
+    #intro .avatar img{
+        transform: none;
+    }
+    #intro .content{
+        left: 20px;
+    }
+    #intro .content .name{
+        font-size: 4em;
+    }
+    #intro .content i{
+        position: unset;
+    }
+    #skill .list{
+        padding: 0px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #skill .list .item:nth-child(odd){
+        background: unset;
+    }
+    #skill .list .item:nth-child(2),
+    #skill .list .item:nth-child(3n){
+        background: #3F2525;
+    }
+    #project .list{
+        padding: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+    #project .list .item img{
+        height: 100px;
+        /* Jika ingin gambar di mobile tetap fit: */
+        object-fit: contain;
+        background-color: #f0f0f0; /* Atau warna lain yang cocok dengan desain Anda */
+    }
+}
+
+/* effect */
+.tab{
+    position: fixed;
+    inset: 0 0 0 0;
+    z-index: 1; /* Z-index yang lebih rendah dari header */
+}
+#intro{
+    z-index: 2; /* Intro harus di atas tab lain saat aktif */
+}
+
+.tab.active{
+    --x: 50%;
+    --y: 50%;
+    clip-path: circle(
+        200% at var(--x) var(--y)
+    );
+    animation: showTab 1s ease-in-out 1;
+}
+@keyframes showTab{
+    from{
+        clip-path: circle(
+            0% at var(--x) var(--y)
+        );
+    }
+}
+
+/* --- Styling untuk Fitur Feedback --- */
+
+#contact .feedback-heading {
+    margin-top: 50px; /* Jarak dari elemen di atasnya */
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color); /* Menggunakan warna teks global */
+}
+
+/* Form Feedback */
+#contact .feedback-form,
+#contact .edit-feedback-form {
+    width: 500px;
+    max-width: 90%; /* Agar responsif di layar kecil */
+    background-color: #333842; /* Background form sedikit lebih terang dari body */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px; /* Jarak antara form dan daftar feedback */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+}
+
+#contact .feedback-form .form-group,
+#contact .edit-feedback-form .form-group {
+    margin-bottom: 15px;
+}
+
+#contact .feedback-form label,
+#contact .edit-feedback-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+
+#contact .feedback-form input[type="text"],
+#contact .feedback-form input[type="email"],
+#contact .feedback-form textarea,
+#contact .edit-feedback-form input[type="text"],
+#contact .edit-feedback-form input[type="email"],
+#contact .edit-feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #eee;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#contact .feedback-form input[type="text"]:focus,
+#contact .feedback-form input[type="email"]:focus,
+#contact .feedback-form textarea:focus,
+#contact .edit-feedback-form input[type="text"]:focus,
+#contact .edit-feedback-form input[type="email"]:focus,
+#contact .edit-feedback-form textarea:focus {
+    border-color: #CA3EA7; /* Warna fokus sesuai gradient */
+}
+
+#contact .feedback-form .submit-feedback-btn,
+#contact .edit-feedback-form .save-feedback-btn,
+#contact .edit-feedback-form .cancel-edit-btn {
+    background-color: #E4454A; /* Warna tombol utama */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#contact .feedback-form .submit-feedback-btn:hover,
+#contact .edit-feedback-form .save-feedback-btn:hover {
+    background-color: #CA3EA7; /* Warna hover sesuai gradient */
+}
+
+#contact .edit-feedback-form .cancel-edit-btn {
+    background-color: #555; /* Warna tombol cancel */
+}
+
+#contact .edit-feedback-form .cancel-edit-btn:hover {
+    background-color: #777;
+}
+
+/* Pesan Error Validasi */
+.error-message {
+    color: #FF6B6B; /* Warna merah untuk error */
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Kontainer Daftar Feedback */
+.feedback-messages-container {
+    width: 100%;
+    max-width: 1140px; /* Sesuaikan dengan container utama Anda */
+    padding: 20px; /* Padding di sekitar daftar feedback */
+    box-sizing: border-box;
+    /* Kontainer ini sendiri tidak perlu scroll,
+       scroll akan diatur di .feedbacks-list jika dibutuhkan */
+}
+
+.feedbacks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak antar item feedback */
+    max-height: 500px; /* Atur tinggi maksimum agar bisa di-scroll */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika melebihi max-height */
+    padding-right: 15px; /* Ruang untuk scrollbar */
+    box-sizing: border-box; /* Penting untuk padding */
+}
+
+/* Item Feedback Individual */
+.feedback-item {
+    background-color: #333842; /* Background item feedback */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    color: #f0f0f0;
+}
+
+.feedback-item .feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feedback-item .feedback-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #E4454A; /* Warna nama sesuai gradient */
+}
+
+.feedback-item .feedback-date {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.feedback-item .feedback-email {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    word-wrap: break-word; /* Pastikan email panjang tidak meluap */
+}
+
+.feedback-item .feedback-message {
+    font-size: 0.95em;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 15px;
+    white-space: pre-wrap; /* Mempertahankan spasi dan baris baru di textarea */
+}
+
+.feedback-item .feedback-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Tombol di kanan bawah */
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.feedback-item .feedback-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-item .edit-feedback-btn {
+    background-color: #2575fc; /* Warna biru */
+    color: white;
+}
+
+.feedback-item .edit-feedback-btn:hover {
+    background-color: #1a5ac5;
+}
+
+.feedback-item .delete-feedback-btn {
+    background-color: #FF6B6B; /* Warna merah */
+    color: white;
+}
+
+.feedback-item .delete-feedback-btn:hover {
+    background-color: #cc5454;
+}
+
+/* Pesan saat loading atau tidak ada feedback */
+.no-feedback-message,
+.loading-feedback-message {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+    padding: 20px;
+    color: #ccc;
+}
+
+#contact{
+    background: #242330;
+}
+#contact .content{
+    /* HAPUS ATAU KOMENTARI BARIS INI: height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* <-- UBAH INI: Untuk konten yang bisa digulir, mulai dari atas */
+    padding-bottom: 50px; /* <-- TAMBAHKAN INI: Agar ada ruang di bawah konten saat digulir */
+}
+
+/* Modifikasi ini untuk #contact .container */
+#contact .container{
+    overflow-y: auto; /* <-- TAMBAHKAN INI: Agar konten di dalam container bisa digulir */
+    height: 100%; /* <-- PASTIKAN INI ADA: Agar container mengambil tinggi penuh dari tab */
+    padding: 50px; /* Pertahankan padding asli container */
+    box-sizing: border-box; /* Pastikan ini ada untuk perhitungan padding */
+}
+
+/* Media Queries untuk Responsivitas Feedback */
+@media screen and (max-width: 767px) {
+    #contact .feedback-form,
+    #contact .edit-feedback-form {
+        padding: 20px;
+        width: 100%; /* Lebar penuh di mobile */
+    }
+
+    #contact .feedback-heading {
+        font-size: 1.5em;
+    }
+
+    .feedbacks-list {
+        max-height: 400px; /* Tinggi scrollable list lebih kecil di mobile */
+        padding-right: 10px;
+    }
+
+    .feedback-item {
+        padding: 15px;
+    }
+
+    .feedback-item .feedback-name {
+        font-size: 1em;
+    }
+
+    .feedback-item .feedback-email,
+    .feedback-item .feedback-message {
+        font-size: 0.85em;
+    }
+}
