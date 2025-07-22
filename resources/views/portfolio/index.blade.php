@@ -112,7 +112,7 @@
                         </div>
                         <a href="{{ $project['link'] }}" target="_blank"
                             class="text-blue-500 hover:underline font-semibold"
-                            style="padding-left: 3%; margin-bottom: 2%">See More About Project
+                            style="padding-left: 50%; margin-bottom: 2%">See More About Project
                             &rarr;</a>
                     </div>
                 @empty

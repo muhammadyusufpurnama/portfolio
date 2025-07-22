@@ -12,7 +12,7 @@ class PortfolioController extends Controller
         // Data untuk bagian Intro
         $intro = [
             'name' => 'Hi, I\'m Yusuf',
-            'job_title' => 'Developer',
+            'job_title' => 'Junior Developer',
             'description' => 'Hello, I am interested in web development using Laravel and MySQL as a database, mobile app development using Kotlin, and data science using Google Colab tools. I also have a basic understanding of website penetration testing using Burp Suite tools.',
             'avatar' => 'images/yusufPortfolio.png',
         ];
