@@ -187,7 +187,7 @@ header nav a:hover {
 #project {
     background-color: #cfbaba;
     color: #444B57;
-    padding: 50px 0; /* Memberi jarak atas bawah pada section */
+    padding: 50px 0px; /* Memberi jarak atas bawah pada section */
 }
 
 /* Mengatur layout grid untuk daftar proyek */

@@ -128,25 +128,13 @@ class PortfolioController extends Controller
                     'images/userRole.png',
                 ],
                 'name' => 'HangNama Car Rental',
-                'description' => 'Creating a Full Stack Application Project for Web Programming Course with Multi-Role Accounts',
+                'description' => "Creating a Full Stack Application Project for Web Programming Course with Multi-Role Accounts \n \n email admin: #qwerty123@email \n password: #Qwerty123",
                 'job' => 'FullStack',
                 'time' => '2023/02/05-2023/06/10',
                 'link' => 'https://muhammadyusufpurnama.web.id/portofolio/public/project1',
             ],
             [
                 'id' => 2,
-                'images' => [
-                    'images/WIUI1.png',
-                    'images/WIUI2.png',
-                ],
-                'name' => 'Wedding invitation UI',
-                'description' => 'Create a simple UI for wedding invitations with reservations using a spreadsheet database.',
-                'job' => 'Front-End',
-                'time' => '2023/08/25-2023/12/12',
-                'link' => 'https://muhammadyusufpurnama.web.id/portofolio/public/project2',
-            ],
-            [
-                'id' => 3,
                 'images' => [
                     'images/Logo PasarTani 2.0.png',
                     'images/PasarTani UI.png',
@@ -159,36 +147,49 @@ class PortfolioController extends Controller
                 'link' => 'https://github.com/anisaideliaa/FPTekberGroup3',
             ],
             [
-                'id' => 4,
+                'id' => 3,
                 'images' => [
                     'images/SK1.png',
                     'images/SK2.png',
                 ],
-                'name' => 'SiKilap',
+                'name' => 'SiKilap Mobile App',
                 'description' => 'creating a mobile application for a car wash on-call business service',
                 'job' => 'Mobile App Developer',
                 'time' => '2025/02/25-2025/06/26',
                 'link' => 'https://github.com/zicorociz/ppplkelompok7',
             ],
             [
+                'id' => 4,
+                'images' => [
+                    'images/Logo PasarTani 2.0.png',
+                    'images/PasarTani UI.png',
+                    'images/PT3.png',
+                ],
+                'name' => 'UI/UX Aplikasi Pasar Tani',
+                'description' => 'creating a display and user testing the Pasar Tani application using figma',
+                'job' => 'UI/UX Designer',
+                'time' => '2025/01/01-2025/01/23',
+                'link' => 'https://www.figma.com/design/qdPoZnUXncnE6o0qwWg52P/Pasar-Tani-dan-Nelayan?node-id=1205-4474&p=f&t=PK5khlMHVS3nmCJb-0',
+            ],
+            [
                 'id' => 5,
                 'images' => [
-                    'images/SK1.png',
-                    'images/SK2.png',
+                    'images/WIUI1.png',
+                    'images/WIUI2.png',
                 ],
-                'name' => 'SiKilap',
-                'description' => 'creating a mobile application for a car wash on-call business service',
-                'job' => 'Mobile App Developer',
-                'time' => '2025/02/25-2025/06/26',
-                'link' => 'https://github.com/zicorociz/ppplkelompok7',
+                'name' => 'Wedding invitation UI',
+                'description' => 'Create a simple UI for wedding invitations with reservations using a spreadsheet database.',
+                'job' => 'Front-End',
+                'time' => '2023/08/25-2023/12/12',
+                'link' => 'https://muhammadyusufpurnama.web.id/portofolio/public/project2',
             ],
         ];
 
         // Data untuk bagian Contact
         $contact = [
-            'phone' => '+62 859-4341-6361',
+            'phone' => '+62 812-3265-5416',
             'email' => 'muhammadyusufpurnamacollege@gmail.com',
-            'instagram' => '@muhammad_yusufpurnama',
+            'linkedin' => 'https://www.linkedin.com/in/muhammad-yusuf-purnama-56967125b/',
         ];
 
         $feedbacks = Feedback::latest()->get();

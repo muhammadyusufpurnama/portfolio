@@ -101,7 +101,7 @@
                         <div class="index">#{{ $project['id'] }}</div>
                         <div class="name">{{ $project['name'] }}</div>
                         <div class="des">
-                            {{ $project['description'] }}
+                            {!! nl2br(e($project['description'])) !!}
                         </div>
                         <div class="author">
                             <div class="job">{{ $project['job'] }}</div>
@@ -146,8 +146,12 @@
                     </div>
 
                     <div class="item">
-                        <i class="fa-brands fa-instagram"></i>
-                        {{ $contact['instagram'] }} {{-- Data Instagram dari controller --}}
+                        <i class="fa-brands fa-linkedin"></i> {{-- Data linkedin dari controller --}}
+                        <a href="{{ $contact['linkedin'] }}" target="_blank"
+                            class="text-light hover:underline font-semibold"
+                            style="text-decoration: none; color: white !important;">
+                            muhammad yusuf purnama
+                        </a>
                     </div>
                 </div>
 

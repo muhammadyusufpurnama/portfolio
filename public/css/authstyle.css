@@ -1,0 +1,58 @@
+        .auth-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .form-signin-wrapper {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-signin h1 {
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .form-signin .form-floating label {
+            color: var(--text-secondary);
+        }
+
+        .form-signin .form-check-label {
+            color: var(--text-secondary);
+        }
+
+        .form-signin .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .form-signin .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .form-signin .auth-links {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .form-signin .auth-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .form-signin .auth-links a:hover {
+            text-decoration: underline;
+        }
